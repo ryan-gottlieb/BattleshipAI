@@ -26,7 +26,7 @@ int main() {
    bool p1_results[5][5];
    bool p2_results [5][5];
 
-   std::cout << "Hello World" << std::endl;
+   std::cout << "Hello!" << std::endl;
    std::cout << p1_ships[0][0] << std::endl;
    return 0;
 }
