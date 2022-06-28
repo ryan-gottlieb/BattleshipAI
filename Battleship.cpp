@@ -1,7 +1,10 @@
 #include <iostream>
+#include <algorithm>
 #include <string>
 #include <cmath>
-
+#include <vector>
+#include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
@@ -16,6 +19,19 @@ bool new_game() {
    return p1_ships, p1_guess, p1_results, p2_ships, p2_guess, p2_results;
 }
 
+int p1_move_order(int N) {       // Esablishes a random linear vector that has random order with unique values
+   std::vector<int> v1(N);       // Create a vector of length N
+   for(int i=0; i < N-1; ++i)     // Linearize vector with increasing values through N-1
+      v1[i] = i;                       
+   std::random_shuffle(v1[0], v1[N]);  // Shuffle the order of the vector
+   return v1;                    // Return the vector that has the randomized order
+}
+
+int p1_move_transform(int Val, int N) {    //Transform the single value index from the randomized vector (value 1)
+   int size = sqrt(N);              // Find the length and width of square board via N (# of spaces on board)
+   int x_axis = floor(Val / size);  // Find row value based on the floor of division (since indexing starts at 0)
+   int y_axis = Val % size;         // Find column value based on the modulus of the value divided by size
+}
 
 int main() {
 
@@ -26,7 +42,7 @@ int main() {
    bool p1_results[5][5];
    bool p2_results [5][5];
 
-   std::cout << "Hello!" << std::endl;
+   std::cout << "Hello World" << std::endl;
    std::cout << p1_ships[0][0] << std::endl;
    return 0;
 }
