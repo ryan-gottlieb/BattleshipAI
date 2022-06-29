@@ -27,10 +27,17 @@ int p1_move_order(int N) {       // Esablishes a random linear vector that has r
    return v1;                    // Return the vector that has the randomized order
 }
 
-int p1_move_transform(int Val, int N) {    //Transform the single value index from the randomized vector (value 1)
+int move_transform(int Val, int N) {    //Transform the single value index from the randomized vector (value 1)
    int size = sqrt(N);              // Find the length and width of square board via N (# of spaces on board)
    int x_axis = floor(Val / size);  // Find row value based on the floor of division (since indexing starts at 0)
    int y_axis = Val % size;         // Find column value based on the modulus of the value divided by size
+}
+
+int p2_move_order(int N) {
+   std::vector<int> v2(N/2);
+   for(int i=0; i < (N/2); i++)
+      v2[i] = 2*i;
+   return v2;
 }
 
 int main() {
